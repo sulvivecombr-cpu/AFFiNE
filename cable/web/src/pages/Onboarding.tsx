@@ -54,9 +54,15 @@ export function Onboarding({ user, onFinished }: { user: User; onFinished: () =>
 
   async function afterImport() {
     if (!exam) return;
-    const data = await api.get<{ subjects: SubjectWithTopics[] }>(`/exams/${exam.id}/subjects`);
-    setTopicsCount(data.subjects.reduce((sum, subject) => sum + subject.topics.length, 0));
-    setStep(3);
+    try {
+      const data = await api.get<{ subjects: SubjectWithTopics[] }>(`/exams/${exam.id}/subjects`);
+      setTopicsCount(data.subjects.reduce((sum, subject) => sum + subject.topics.length, 0));
+    } catch {
+      // The trail was already created server-side by the confirmation; a failed
+      // recount must not trap the candidate on the edital step.
+    } finally {
+      setStep(3);
+    }
   }
 
   async function generatePlan() {

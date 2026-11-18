@@ -122,14 +122,16 @@ export function NoticeImport({
         `/notices/${detail.notice.id}/confirm`,
         { subjects }
       );
-      onDone(
-        `Edital confirmado · ${result.subjectsCreated} disciplina(s) e ${result.topicsCreated} assunto(s) criados`
-      );
+      // Leave the review screen before notifying the parent: if the parent's
+      // callback fails, the candidate must not be stuck on an already-created
+      // trail. The confirmation is persisted server-side at this point.
+      const confirmed = `Edital confirmado · ${result.subjectsCreated} disciplina(s) e ${result.topicsCreated} assunto(s) criados`;
       setDetail(null);
       setStep('form');
       setTitle('Edital');
       setFile(null);
       setMessage(null);
+      onDone(confirmed);
     } catch (requestError) {
       setError(requestError instanceof Error ? requestError.message : 'Não foi possível confirmar.');
     } finally {
