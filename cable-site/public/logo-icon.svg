@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Ícone Cable">
+  <rect width="512" height="512" rx="120" fill="#0A1B33"/>
+  <path d="M344 166a115 115 0 1 0 0 180" fill="none" stroke="#2E6BFF" stroke-width="44" stroke-linecap="round"/>
+  <circle cx="377" cy="256" r="38" fill="#FFFFFF"/>
+</svg>

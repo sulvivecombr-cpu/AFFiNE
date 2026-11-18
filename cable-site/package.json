@@ -1,0 +1,13 @@
+{
+  "name": "cable-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Site institucional oficial do Cable — portal público, acesso, instalação, suporte e políticas.",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node server.js"
+  }
+}
