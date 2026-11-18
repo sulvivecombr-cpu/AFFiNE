@@ -47,7 +47,7 @@ const RemoteWorkspaceStatus = ({ selfHosted }: { selfHosted?: boolean }) => {
   return (
     <>
       <Icon />
-      {selfHosted ? 'AFFiNE' : 'Cloud'}
+      {selfHosted ? 'Cable' : 'Cloud'}
     </>
   );
 };

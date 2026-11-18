@@ -34,10 +34,10 @@ export const appIconMap = {
 } satisfies Record<Channel, string>;
 
 export const appNames = {
-  stable: 'AFFiNE',
-  canary: 'AFFiNE Canary',
-  beta: 'AFFiNE Beta',
-  internal: 'AFFiNE Internal',
+  stable: 'Cable',
+  canary: 'Cable Canary',
+  beta: 'Cable Beta',
+  internal: 'Cable Internal',
 } satisfies Record<Channel, string>;
 
 export const appSchemaUrl = z.custom<string>(
